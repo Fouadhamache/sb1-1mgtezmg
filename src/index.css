@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  @apply text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2.5 lg:px-6 lg:py-2.5 bg-gray-900 text-white rounded-xl font-semibold 
+    hover:bg-gray-800 transition-all duration-300 shadow-luxury hover:shadow-luxury-hover 
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50
+    dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 text-sm lg:text-base;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2.5 lg:px-6 lg:py-2.5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white 
+    border border-gray-300 dark:border-gray-600 rounded-xl font-semibold 
+    hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-luxury hover:shadow-luxury-hover 
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-sm lg:text-base;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl lg:rounded-3xl shadow-luxury hover:shadow-luxury-hover transition-all duration-300 p-4 lg:p-6
+    border border-gray-100 dark:border-gray-700;
+  }
+  
+  .card-luxury {
+    @apply bg-white dark:bg-gray-800 rounded-3xl shadow-elegant hover:shadow-luxury-hover transition-all duration-500 p-6 lg:p-8
+    border border-gray-100 dark:border-gray-700 backdrop-blur-luxury;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2.5 lg:px-4 lg:py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl lg:rounded-2xl 
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-all duration-300
+    dark:text-gray-100 dark:placeholder-gray-400 text-sm lg:text-base shadow-luxury-soft;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-luxury bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 dark:border-gray-700/50;
+  }
+
+  /* Subject card hover effects with soft colors */
+  .subject-card-pink {
+    @apply hover:bg-soft-pink-50 hover:border-soft-pink-200 dark:hover:bg-soft-pink-100/10 dark:hover:border-soft-pink-300/30;
+  }
+  
+  .subject-card-blue {
+    @apply hover:bg-soft-blue-50 hover:border-soft-blue-200 dark:hover:bg-soft-blue-100/10 dark:hover:border-soft-blue-300/30;
+  }
+  
+  .subject-card-purple {
+    @apply hover:bg-soft-purple-50 hover:border-soft-purple-200 dark:hover:bg-soft-purple-100/10 dark:hover:border-soft-purple-300/30;
+  }
+  
+  .subject-card-green {
+    @apply hover:bg-soft-green-50 hover:border-soft-green-200 dark:hover:bg-soft-green-100/10 dark:hover:border-soft-green-300/30;
+  }
+  
+  .subject-card-orange {
+    @apply hover:bg-soft-orange-50 hover:border-soft-orange-200 dark:hover:bg-soft-orange-100/10 dark:hover:border-soft-orange-300/30;
+  }
+  
+  .subject-card-yellow {
+    @apply hover:bg-soft-yellow-50 hover:border-soft-yellow-200 dark:hover:bg-soft-yellow-100/10 dark:hover:border-soft-yellow-300/30;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Smooth transitions for luxury feel */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Optimize text sizes for mobile */
+  .text-xs { font-size: 0.75rem; }
+  .text-sm { font-size: 0.875rem; }
+  .text-base { font-size: 1rem; }
+  .text-lg { font-size: 1.125rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .text-3xl { font-size: 1.875rem; }
+  
+  /* Improve spacing for mobile */
+  .space-y-1 > * + * { margin-top: 0.25rem; }
+  .space-y-2 > * + * { margin-top: 0.5rem; }
+  .space-y-3 > * + * { margin-top: 0.75rem; }
+  .space-y-4 > * + * { margin-top: 1rem; }
+  .space-y-6 > * + * { margin-top: 1.5rem; }
+  
+  /* Mobile-friendly padding */
+  .p-3 { padding: 0.75rem; }
+  .p-4 { padding: 1rem; }
+  .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  
+  /* Better mobile spacing */
+  .space-y-1 > * + * { margin-top: 0.25rem; }
+  .space-y-2 > * + * { margin-top: 0.5rem; }
+  .gap-2 { gap: 0.5rem; }
+  .gap-3 { gap: 0.75rem; }
+  
+  /* Mobile bottom navigation safe area */
+  .pb-20 {
+    padding-bottom: 6rem;
+  }
+  
+  /* Ensure proper mobile layout */
+  .min-h-0 {
+    min-height: 0;
+  }
+  
+  /* Fix layout issues on mobile */
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* Ensure full height containers */
+  .h-screen {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+  
+  /* Fix sidebar and content layout */
+  .flex-1 {
+    flex: 1 1 0%;
+    min-height: 0;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix viewport height on iOS */
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+  }
+  
+  /* Improve touch scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix iOS viewport issues */
+  .h-screen {
+    height: -webkit-fill-available;
+    height: 100dvh;
+  }
+}
+
+/* Android specific optimizations */
+@media screen and (max-width: 768px) {
+  /* Improve tap highlighting */
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Fix Android viewport */
+  .h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper borders and shadows */
+  .border {
+    border-width: 0.5px;
+  }
+  
+  .shadow-sm {
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Luxury animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Elegant hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Fix layout issues */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Ensure proper scrolling on all devices */
+.scrollable {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+/* Fix glassmorphism effects */
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-nav {
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
